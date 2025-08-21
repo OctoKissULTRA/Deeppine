@@ -1,17 +1,23 @@
-# Deep Pine — Minimal Landing (Vercel-ready)
+# Deep Pine — Next.js + Tailwind (Vercel-ready)
 
-Single-page, dependency-free landing site for **deeppine.io** aimed at auditors and partners.
+Dark, pine-green theme. Sections include Hero, Tabs, Features, Assurance, Newsletter, FAQ, Contact, and Footer.
+Images and logo are wired up under `/public/images`.
 
-## Deploy (Dashboard)
-- Drag-and-drop this folder to Vercel → Framework: Other → Build: None → Output: `/` → Deploy.
+## Quickstart
 
-## Deploy (CLI)
 ```bash
-npm i -g vercel
-vercel login
-vercel deploy --prod
+pnpm i   # or npm i / yarn
+pnpm dev # http://localhost:3000
 ```
 
-## Customize
-- Edit `index.html` copy blocks: Hero, What we do, Principles, Assurance, Contact.
-- Replace `/assets/logo.png` with your preferred logo.
+## Deploy (Vercel)
+
+1. Push to GitHub.
+2. Import into Vercel → Framework: **Next.js**.
+3. Build command: `next build` (default).
+
+## Notes
+
+- Colors live in `tailwind.config.ts` (the `pine` palette).
+- Static policy pages at `/public/*.html`.
+- Trust assets: `/.well-known/security.txt`, `/sitemap.xml`, `/robots.txt`, `/humans.txt`.
