@@ -1,4 +1,1 @@
 Contact: mailto:admin@deeppine.io
-Expires: 2026-12-31T23:59:59.000Z
-Preferred-Languages: en
-Canonical: https://deeppine.io/.well-known/security.txt

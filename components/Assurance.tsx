@@ -1,13 +1,4 @@
-export default function Assurance() {
-  return (
-    <div className="card p-8">
-      <p className="uppercase tracking-widest text-xs text-pine-200/60">Powering tomorrow’s digital leaders</p>
-      <h3 className="text-2xl md:text-3xl font-bold mt-2">Trusted delivery, clear due‑diligence.</h3>
-      <ul className="mt-4 grid md:grid-cols-3 gap-4 text-sm text-muted">
-        <li>Security.txt, robots, sitemap &amp; status endpoints</li>
-        <li>Accessibility commitment (WCAG 2.2 AA)</li>
-        <li>Transparent changelog and SLAs</li>
-      </ul>
-    </div>
-  );
-}
+export default function Assurance(){return(<section className="container py-16">
+<div className="grid md:grid-cols-3 gap-6">{[{k:'Accessibility',v:'WCAG 2.2 AA components'},{k:'Security',v:'Headers, CSP, deps hygiene'},{k:'Performance',v:'Core Web Vitals 90+ baseline'}].map(x=>(<div key={x.k} className="card p-6"><h4 className="font-semibold">{x.k}</h4><p className="opacity-90 mt-2">{x.v}</p></div>))}</div>
+<p className="opacity-80 text-sm mt-4">Due diligence: <a href="/docs/deep-pine-self-assessment.pdf">Self‑assessment</a> · <a href="/.well-known/security.txt">security.txt</a></p>
+</section>)}

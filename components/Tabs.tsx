@@ -1,56 +1,9 @@
-'use client';
-import { useState } from 'react';
-import Image from 'next/image';
-
-const TABS = [
-  {
-    key: 'ai',
-    title: 'AI-powered efficiency',
-    headline: 'Automate. Optimize. Accelerate.',
-    desc: 'ML-enhanced research, content, ops and QA. We build assistants, pipelines, and evals with security baked in.',
-    img: '/images/dashboard-ui.png'
-  },
-  {
-    key: 'saas',
-    title: 'SaaS for growth',
-    headline: 'Operational excellence, product velocity.',
-    desc: 'From prototype to scale: auth, billing, analytics, CI/CD, and observability. Ship confidently.',
-    img: '/images/desk-lab.png'
-  },
-  {
-    key: 'design',
-    title: 'Next-level product design',
-    headline: 'Interfaces users love. Systems teams trust.',
-    desc: 'Design systems, tokens, and component libraries that stay beautiful at scale.',
-    img: '/images/forest-hero.png'
-  }
-];
-
-export default function Tabs() {
-  const [active, setActive] = useState('ai');
-  const tab = TABS.find(t => t.key === active)!;
-
-  return (
-    <div>
-      <div className="flex gap-6 overflow-x-auto pb-2">
-        {TABS.map(t => (
-          <button key={t.key}
-            onClick={() => setActive(t.key)}
-            className={"whitespace-nowrap pb-2 text-sm " + (t.key === active ? "text-pine-200 border-b-2 border-pine-400" : "text-pine-100/70 hover:text-pine-100")}>
-            {t.title}
-          </button>
-        ))}
-      </div>
-
-      <div className="mt-8 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <h3 className="text-3xl md:text-4xl font-bold">{tab.headline}</h3>
-          <p className="text-muted mt-4">{tab.desc}</p>
-        </div>
-        <div className="card overflow-hidden">
-          <Image src={tab.img} alt={tab.title} width={1200} height={800} className="w-full h-auto object-cover" />
-        </div>
-      </div>
-    </div>
-  );
-}
+'use client';import {useState} from 'react';import Image from 'next/image';
+const tabs=[{k:'ai',t:'AI-powered efficiency',b:'Automate. Optimize. Accelerate.',img:'/images/dashboard-ui.png'},
+{k:'saas',t:'SaaS for growth',b:'Reliable, secure, and built to scale.',img:'/images/desk-lab.png'},
+{k:'design',t:'Next-level product design',b:'Intuitive, modular, brand-consistent.',img:'/images/forest-hero.png'}];
+export default function Tabs(){const[i,setI]=useState(0);const p=tabs[i];return(<section id="tabs" className="container py-12">
+<div className="flex gap-4 flex-wrap">{tabs.map((t,idx)=>(<button key={t.k} onClick={()=>setI(idx)} className={"px-4 py-2 rounded-full border "+(i===idx?"bg-[#126157] text-white":"border-[#0a3430]")}>{t.t}</button>))}</div>
+<h3 className="text-2xl mt-6">{p.b}</h3>
+<div className="grid md:grid-cols-2 gap-8 mt-6 items-center"><div className="card overflow-hidden"><Image src={p.img} alt={p.t} width={1200} height={800}/></div>
+<ul className="space-y-3"><li className="card p-4">Design systems</li><li className="card p-4">Accessible components</li><li className="card p-4">Motion as meaning</li></ul></div></section>)}

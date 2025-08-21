@@ -1,30 +1,6 @@
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --bg: #031616;
-  --card: #072524;
-  --muted: #0a3430;
-  --text: #e6f2f0;
-  --accent: #1b7f6d;
-  --ring: #3fa08b;
-}
-
-html, body {
-  @apply h-full;
-  background: var(--bg);
-  color: var(--text);
-}
-
-a { @apply text-pine-300 hover:text-pine-200 underline-offset-4; }
-.container { @apply max-w-6xl mx-auto px-6; }
-.section { @apply py-20 md:py-28; }
-.card { @apply bg-pine-900/60 rounded-2xl border border-pine-800 shadow-glow; }
-.btn-primary { @apply inline-flex items-center gap-2 rounded-xl bg-pine-600 hover:bg-pine-500 px-5 py-3 text-white transition; }
-.badge { @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold bg-pine-800 text-pine-200 border border-pine-700; }
-.input { @apply w-full rounded-xl bg-pine-900/70 border border-pine-700 text-pine-50 placeholder:text-pine-300/40 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pine-400; }
-.select { @apply w-full rounded-xl bg-pine-900/70 border border-pine-700 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-pine-400; }
-.text-muted { @apply text-pine-100/70; }
-.hr { @apply border-pine-800 my-12; }
+@tailwind base;@tailwind components;@tailwind utilities;
+:root{--bg:#031616;--card:#072524;--text:#e6f2f0;--accent:#1b7f6d;--ring:#3fa08b}
+body{background:var(--bg);color:var(--text)}.container{max-width:72rem;margin:0 auto;padding:0 1.5rem}
+.btn{display:inline-flex;gap:.5rem;align-items:center;padding:.75rem 1.25rem;border-radius:.75rem;background:#126157;color:white}
+.card{background:#072524;border:1px solid #0a3430;border-radius:1rem}
+.input{width:100%;padding:.75rem 1rem;border-radius:.75rem;background:#031b1b;border:1px solid #0a3430;color:#e6f2f0}

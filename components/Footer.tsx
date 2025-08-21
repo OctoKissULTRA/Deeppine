@@ -1,43 +1,9 @@
-export default function Footer() {
-  return (
-    <footer className="section border-t border-pine-800 mt-10">
-      <div className="container grid md:grid-cols-4 gap-8 text-sm">
-        <div>
-          <div className="text-lg font-semibold">Deep Pine LLC</div>
-          <p className="text-muted mt-2">AI-powered SaaS. Designed in Colorado.</p>
-          <a className="underline mt-2 inline-block" href="/docs/deep-pine-self-assessment.pdf">Download</a>
-        </div>
-        <div>
-          <div className="font-semibold">Product</div>
-          <ul className="mt-2 space-y-1">
-            <li><a href="#features">Platform</a></li>
-            <li><a href="#features">Solutions</a></li>
-            <li><a href="#features">Pricing</a></li>
-            <li><a href="#newsletter">Support</a></li>
-          </ul>
-        </div>
-        <div>
-          <div className="font-semibold">Company</div>
-          <ul className="mt-2 space-y-1">
-            <li><a href="#tabs">About</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#contact">Press</a></li>
-          </ul>
-        </div>
-        <div>
-          <div className="font-semibold">Legal</div>
-          <ul className="mt-2 space-y-1">
-            <li><a href="/terms.html">Terms</a></li>
-            <li><a href="/privacy.html">Privacy</a></li>
-            <li><a href="/accessibility.html">Accessibility</a></li>
-            <li><a href="/changelog.html">Changelog</a></li>
-          </ul>
-        </div>
-      </div>
-      <div className="container mt-10 text-xs text-pine-100/60">
-        © {new Date().getFullYear()} Deep Pine LLC — All rights reserved.
-      </div>
-    </footer>
-  );
-}
+export default function Footer(){return(<footer className="border-t border-[#0a3430] mt-10">
+<div className="container py-10 grid md:grid-cols-4 gap-8 text-sm">
+<div><b>Deep Pine</b><p className="opacity-80 mt-2">AI-powered SaaS. Designed in Colorado.</p><p className="mt-2"><a href="mailto:admin@deeppine.io">admin@deeppine.io</a></p></div>
+<div><p className="font-semibold">Product</p><ul className="mt-2 space-y-2 opacity-90"><li><a href="#features">Platform</a></li><li><a href="#tabs">Solutions</a></li><li><a href="#assurance">Assurance</a></li><li><a href="/changelog.html">Changelog</a></li></ul></div>
+<div><p className="font-semibold">Company</p><ul className="mt-2 space-y-2 opacity-90"><li><a href="/privacy.html">Privacy</a></li><li><a href="/terms.html">Terms</a></li><li><a href="/accessibility.html">Accessibility</a></li></ul></div>
+<div><p className="font-semibold">Resources</p><ul className="mt-2 space-y-2 opacity-90"><li><a href="/docs/deep-pine-self-assessment.pdf">Due diligence</a></li><li><a href="/.well-known/security.txt">Security</a></li><li><a href="/sitemap.xml">Sitemap</a></li></ul></div>
+</div>
+<div className="container text-xs opacity-70 py-6">© {new Date().getFullYear()} Deep Pine LLC — All rights reserved.</div>
+</footer>)}
