@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,21 +23,31 @@ export default function Navigation() {
     { name: 'Contact', href: '#contact' }
   ];
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-white shadow-lg' : 'bg-white/95 backdrop-blur-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">D</span>
-              </div>
-              <span className={`text-2xl font-bold ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
-                Deep Pine
-              </span>
-            </div>
+            <Link href="/" className="flex items-center space-x-3">
+              <Image
+                src="/logo.png"
+                alt="Deep Pine"
+                width={50}
+                height={50}
+                className="object-contain"
+              />
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -43,24 +55,26 @@ export default function Navigation() {
               <a
                 key={item.name}
                 href={item.href}
-                className={`font-medium transition-colors duration-200 ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-purple-600' 
-                    : 'text-white/90 hover:text-white'
-                }`}
+                onClick={(e) => scrollToSection(e, item.href)}
+                className="font-medium text-gray-700 hover:text-[#2d5a4b] transition-colors duration-200"
               >
                 {item.name}
               </a>
             ))}
-            <button className="px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-lg hover:shadow-lg transform hover:scale-105 transition-all duration-200">
-              Get Started
-            </button>
+            <a
+              href="https://calendly.com/deeppine"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 bg-[#2d5a4b] text-white font-medium rounded-md hover:bg-[#1e3d32] transition-all duration-200 shadow-sm hover:shadow-md"
+            >
+              Schedule Demo
+            </a>
           </div>
 
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`p-2 rounded-lg ${isScrolled ? 'text-gray-900' : 'text-white'}`}
+              className="p-2 rounded-lg text-gray-700 hover:bg-gray-100"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {isMobileMenuOpen ? (
@@ -74,25 +88,26 @@ export default function Navigation() {
         </div>
 
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-4">
-            <div className="flex flex-col space-y-3">
+          <div className="md:hidden pb-4 border-t border-gray-200">
+            <div className="flex flex-col space-y-2 mt-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className={`font-medium px-4 py-2 rounded-lg ${
-                    isScrolled 
-                      ? 'text-gray-700 hover:bg-gray-100' 
-                      : 'text-white hover:bg-white/10'
-                  }`}
+                  onClick={(e) => scrollToSection(e, item.href)}
+                  className="font-medium px-4 py-2 text-gray-700 hover:text-[#2d5a4b] hover:bg-gray-50 rounded-lg"
                 >
                   {item.name}
                 </a>
               ))}
-              <button className="mx-4 px-6 py-2 bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold rounded-lg">
-                Get Started
-              </button>
+              <a
+                href="https://calendly.com/deeppine"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mx-4 px-6 py-2.5 bg-[#2d5a4b] text-white font-medium rounded-md text-center"
+              >
+                Schedule Demo
+              </a>
             </div>
           </div>
         )}

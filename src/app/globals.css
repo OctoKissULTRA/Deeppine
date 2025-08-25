@@ -1,5 +1,18 @@
 @import "tailwindcss";
 
+/* Deep Pine Color Palette */
+:root {
+  --pine-darkest: #0f1f1a;
+  --pine-dark: #1e3d32;
+  --pine-primary: #2d5a4b;
+  --pine-medium: #4a8b7c;
+  --pine-light: #6eb5a6;
+  --pine-accent: #8fd4c1;
+  --pine-pale: #b8e6db;
+  --cream: #faf8f3;
+  --warm-gray: #8b8680;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -105,10 +118,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #9333ea, #06b6d4);
+  background: linear-gradient(to bottom, #2d5a4b, #4a8b7c);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #7c3aed, #0891b2);
+  background: linear-gradient(to bottom, #1e3d32, #2d5a4b);
 }

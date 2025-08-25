@@ -57,10 +57,10 @@ export default function Features() {
   ];
 
   return (
-    <section className="py-24 bg-white">
+    <section id="features" className="py-20 bg-[#faf8f3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Built for the Future of Enterprise
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -72,25 +72,35 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="group relative p-8 bg-white rounded-2xl border border-gray-200 hover:border-purple-500 hover:shadow-xl transition-all duration-300 cursor-pointer"
+              className="group bg-white p-8 rounded-2xl border border-gray-200 hover:border-[#4a8b7c] hover:shadow-xl transition-all duration-300 cursor-pointer"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-2xl opacity-0 group-hover:opacity-5 transition-opacity duration-300"></div>
-              
-              <div className="relative">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-cyan-600 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
-                  {feature.icon}
-                </div>
-                
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {feature.title}
-                </h3>
-                
-                <p className="text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
+              <div className="w-16 h-16 bg-gradient-to-r from-[#2d5a4b] to-[#4a8b7c] rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
+                {feature.icon}
               </div>
+              
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                {feature.title}
+              </h3>
+              
+              <p className="text-gray-600 leading-relaxed">
+                {feature.description}
+              </p>
             </div>
           ))}
+        </div>
+
+        <div className="text-center mt-16">
+          <a
+            href="https://calendly.com/deeppine"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-8 py-4 bg-[#2d5a4b] text-white font-semibold rounded-lg hover:bg-[#1e3d32] transition-all duration-200 shadow-lg hover:shadow-xl"
+          >
+            Schedule a Demo
+            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

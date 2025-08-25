@@ -1,70 +1,34 @@
 'use client';
 
-import { useState } from 'react';
-
 export default function Expertise() {
-  const [activeTab, setActiveTab] = useState(0);
-
   const expertiseAreas = [
     {
       title: "Enterprise SaaS Engineering",
-      icon: "🏢",
       description: "Robust, secure, and compliance-ready platforms designed for high availability and infinite scale.",
-      details: [
-        "Multi-tenant architecture with data isolation",
-        "99.99% uptime SLA guarantee",
-        "GDPR, HIPAA, and SOC 2 compliance",
-        "Automated CI/CD pipelines",
-        "Microservices and containerization",
-        "Global CDN and edge computing"
-      ]
+      features: ["Multi-tenant architecture", "99.99% uptime SLA", "SOC 2 & HIPAA compliance", "Automated CI/CD pipelines"]
     },
     {
       title: "Human-Centered Product Design",
-      icon: "🎨",
       description: "Data-driven UX/UI frameworks that drive adoption, retention, and measurable ROI.",
-      details: [
-        "User research and persona development",
-        "A/B testing and conversion optimization",
-        "Responsive design systems",
-        "Accessibility compliance (WCAG 2.1)",
-        "Interactive prototypes and user testing",
-        "Design token architecture"
-      ]
+      features: ["User research & personas", "A/B testing optimization", "Accessibility compliance", "Design system architecture"]
     },
     {
       title: "AI-First Development",
-      icon: "🤖",
       description: "Harnessing generative intelligence for code automation, workflow orchestration, and predictive analytics.",
-      details: [
-        "Large Language Model integration",
-        "Automated code generation and review",
-        "Predictive analytics and forecasting",
-        "Natural language processing",
-        "Computer vision capabilities",
-        "MLOps and model deployment"
-      ]
+      features: ["LLM integration", "Automated code generation", "Predictive analytics", "MLOps deployment"]
     },
     {
       title: "Systems Integration",
-      icon: "🔗",
       description: "Seamless interoperability across APIs, cloud environments, and third-party platforms.",
-      details: [
-        "RESTful and GraphQL API design",
-        "Event-driven architecture",
-        "Message queuing and streaming",
-        "Legacy system modernization",
-        "Multi-cloud orchestration",
-        "Real-time data synchronization"
-      ]
+      features: ["RESTful & GraphQL APIs", "Event-driven architecture", "Legacy modernization", "Multi-cloud orchestration"]
     }
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="expertise" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
             Our Expertise
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -72,51 +36,47 @@ export default function Expertise() {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {expertiseAreas.map((area, index) => (
-            <button
+            <div
               key={index}
-              onClick={() => setActiveTab(index)}
-              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                activeTab === index
-                  ? 'bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-lg'
-                  : 'bg-white text-gray-700 border border-gray-300 hover:border-purple-500'
-              }`}
+              className="bg-gradient-to-br from-[#faf8f3] to-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300"
             >
-              <span className="mr-2 text-2xl">{area.icon}</span>
-              {area.title}
-            </button>
-          ))}
-        </div>
-
-        <div className="bg-white rounded-3xl shadow-xl p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                {expertiseAreas[activeTab].title}
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                {area.title}
               </h3>
-              <p className="text-lg text-gray-600 mb-6">
-                {expertiseAreas[activeTab].description}
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                {area.description}
               </p>
               <ul className="space-y-3">
-                {expertiseAreas[activeTab].details.map((detail, index) => (
-                  <li key={index} className="flex items-start">
-                    <svg className="w-6 h-6 text-purple-600 mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-gray-700">{detail}</span>
+                {area.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-center">
+                    <div className="w-2 h-2 bg-[#2d5a4b] rounded-full mr-3 flex-shrink-0"></div>
+                    <span className="text-gray-700">{feature}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            
-            <div className="relative">
-              <div className="aspect-square bg-gradient-to-br from-purple-100 to-cyan-100 rounded-2xl flex items-center justify-center">
-                <div className="text-[150px] animate-pulse">
-                  {expertiseAreas[activeTab].icon}
-                </div>
-              </div>
-            </div>
+          ))}
+        </div>
+
+        <div className="text-center mt-16">
+          <div className="bg-gradient-to-r from-[#2d5a4b] to-[#4a8b7c] rounded-2xl p-8 text-white">
+            <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Business?</h3>
+            <p className="text-lg mb-6 opacity-90">
+              Let&apos;s discuss how Deep Pine can accelerate your digital transformation journey.
+            </p>
+            <a
+              href="https://calendly.com/deeppine"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-8 py-4 bg-white text-[#2d5a4b] font-semibold rounded-lg hover:bg-gray-100 transition-all duration-200 shadow-lg"
+            >
+              Book Consultation
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
