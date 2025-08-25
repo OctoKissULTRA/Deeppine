@@ -1,2 +1,0 @@
-import Navbar from "@/components/Navbar";import Hero from "@/components/Hero";import Tabs from "@/components/Tabs";import FeatureGrid from "@/components/FeatureGrid";import Assurance from "@/components/Assurance";import Newsletter from "@/components/Newsletter";import FAQ from "@/components/FAQ";import Contact from "@/components/Contact";import Footer from "@/components/Footer";import "./globals.css";
-export default function Page(){return(<><Navbar/><Hero/><Tabs/><FeatureGrid/><Assurance/><Newsletter/><FAQ/><Contact/><Footer/></>)}

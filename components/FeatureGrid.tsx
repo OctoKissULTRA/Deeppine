@@ -1,4 +1,0 @@
-import Image from 'next/image';
-const F=[['AI design intelligence','/images/dashboard-ui.png'],['SaaS built to scale','/images/desk-lab.png'],['Next‑gen UI frameworks','/images/forest-hero.png'],['Growth‑driven roadmaps','/images/desk-lab.png']];
-export default function FeatureGrid(){return(<section id="features" className="container py-16"><h2 className="text-4xl font-bold mb-8">AI‑powered products. Business‑ready results.</h2>
-<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">{F.map(([t,img])=>(<div key={t} className="card"><Image src={img} alt={t} width={1200} height={800} className="w-full h-40 object-cover"/><div className="p-6"><h3 className="text-xl font-semibold">{t}</h3><p className="opacity-90 mt-2">Streamline development with AI tools.</p></div></div>))}</div></section>)}

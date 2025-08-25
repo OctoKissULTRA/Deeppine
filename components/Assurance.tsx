@@ -1,4 +1,0 @@
-export default function Assurance(){return(<section className="container py-16">
-<div className="grid md:grid-cols-3 gap-6">{[{k:'Accessibility',v:'WCAG 2.2 AA components'},{k:'Security',v:'Headers, CSP, deps hygiene'},{k:'Performance',v:'Core Web Vitals 90+ baseline'}].map(x=>(<div key={x.k} className="card p-6"><h4 className="font-semibold">{x.k}</h4><p className="opacity-90 mt-2">{x.v}</p></div>))}</div>
-<p className="opacity-80 text-sm mt-4">Due diligence: <a href="/docs/deep-pine-self-assessment.pdf">Self‑assessment</a> · <a href="/.well-known/security.txt">security.txt</a></p>
-</section>)}
